@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <link rel="stylesheet" href="/static/css/grids-responsive-min.css" />
+    <link rel="stylesheet" href="/static/css/pure-min.css" />
+    <style>
+        .container {
+            width: 100%;
+            margin-left: 5%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form class="pure-form pure-form-stacked" method="POST">
+            <fieldset>
+                <legend>身份验证</legend>
+                <div class="content">
+                    <label for="username">用户名</label>
+                    <div class="pure-g">
+                        <input class="pure-u-md-1-2 pure-u-lg-1-4" id="username" type="text" name="username" placeholder="用户名">
+                    </div>
+                    <label for="password">密码</label>
+                    <div class="pure-g">
+                        <input class="pure-u-md-1-2 pure-u-lg-1-4" id="password" type="password" name="password" placeholder="密码">
+                    </div>
+                    <div class="pure-g">
+                        <button type="submit" class="pure-button pure-button-primary">确认</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>控制面板</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/css/pure-min.css" />
+    <script src="/static/js/axios.min.js"></script>
+    <style>
+        #content {
+            width: 45%;
+            margin: 35% 0;
+        }
+
+        li {
+            list-style-type: none;
+            margin: 1.8em 0;
+        }
+
+        .button-xlarge {
+            font-size: 125%;
+            padding: 20% 90%;
+        }
+
+        #msg {
+            margin-left: 90%;
+            font-size: 125%;
+            color: brown;
+        }
+    </style>
+    <script>
+        'use strict'
+        function act(v) {
+            axios.post('/', { action: v }).then(
+                (resp) => {
+                    if (resp.data.msg === '成功') {
+                        alert('成功');
+                    }
+                }).catch(
+                    (e) => {
+                        alert(e);
+                    }
+                )
+        }
+    </script>
+</head>
+
+<body>
+    <div id="content">
+        <div id="body">
+            <ul>
+                <li>
+                    <button class="pure-button pure-button-primary button-xlarge" name="up"
+                        onclick="act('up');">向上</button>
+                </li>
+                <li>
+                    <button class="pure-button pure-button-primary button-xlarge" name="down"
+                        onclick="act('down');">向下</button>
+                </li>
+                <li>
+                    <button class="pure-button pure-button-primary button-xlarge" name="stop"
+                        onclick="act('stop');">停止</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
